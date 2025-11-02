@@ -48,8 +48,12 @@ async function snd() {
     // IMPORTANT: Ensure there is no trailing slash here
     const VERCEL_BACKEND_URL = "https://backend-eta-dusky.vercel.app";
     
+    // Debugging: Log the exact URL being fetched to verify the double slash is gone
+    const fetchUrl = `${VERCEL_BACKEND_URL}/ask`;
+    console.log("Fetching URL:", fetchUrl); 
+    
     try {
-        const response = await fetch(`${VERCEL_BACKEND_URL}/ask`, {
+        const response = await fetch(fetchUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ question: msg })
