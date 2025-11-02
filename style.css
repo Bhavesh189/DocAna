@@ -142,6 +142,7 @@ span a {
     margin: 10px;
     width: fit-content;
     font-family: poppins, sans-serif;
+    white-space: pre-wrap;
 }
 
 .bo {
@@ -151,6 +152,7 @@ span a {
     margin: 10px;
     width: fit-content;
     font-family: poppins, sans-serif;
+    white-space: pre-wrap;
 }
 
 @media screen and (max-width: 600px) {
@@ -202,4 +204,5 @@ span a {
     .t .l span {
         font-size: 12px;  
     }
+
 }
