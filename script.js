@@ -45,6 +45,7 @@ async function snd() {
     chats.scrollTop = chats.scrollHeight;
     ques.value = "";
 
+    // IMPORTANT: Ensure there is no trailing slash here
     const VERCEL_BACKEND_URL = "https://backend-eta-dusky.vercel.app";
     
     try {
@@ -65,6 +66,7 @@ async function snd() {
         }
 
     } catch (error) {
+        // Network error is most common here if Vercel is unreachable or URL is wrong
         bot.innerText = "⚠️ Network Error: Could not reach the Vercel backend. Check your URL or server status.";
         console.error("Network or parsing error:", error);
     }
@@ -88,10 +90,3 @@ bar.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(".chats").scrollTop = document.querySelector(".chats").scrollHeight;
 });
-
-
-
-
-
-
-
