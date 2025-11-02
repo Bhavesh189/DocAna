@@ -88,3 +88,4 @@ bar.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(".chats").scrollTop = document.querySelector(".chats").scrollHeight;
 });
+
