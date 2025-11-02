@@ -1,19 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --bg-color: #0f1720;
+    --accent-color: #ff5d35;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins, sans-serif;
 }
+
+body {
+    background-color: var(--bg-color);
+}
+
 .t {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 60px;
-    background-color: #ff5d35;
+    background-color: var(--accent-color);
     padding: 10px;
-    border-radius: 10px;
-    font-family: poppins, sans-serif;
+    border-radius: 0 10px 10px 0;
     min-height: calc(100vh - 60px);
     z-index: 10000;
     width: 14%;
@@ -37,7 +49,7 @@
 
 .t .l i {
     position: static;
-    color: #4285f4;  
+    color: #4285f4; 
     font-size: 20px;
     margin: 0;
 }
@@ -50,10 +62,11 @@
     padding: 0;
 }
 
-.t .l:hover {
+.t .l:hover, .t .l:focus {
     background: #f8f9fa;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+
 n:hover {
     background-color: #ff7a5a;
 }
@@ -71,9 +84,9 @@ span a {
 }
 
 .nav {
-    background-color: #ff5d35;
+    background-color: var(--accent-color);
     color: white;
-    font-family: poppins, sans-serif;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .nav h1 {
@@ -88,22 +101,28 @@ span a {
     cursor: pointer;
     color: white;
     font-size: 30px;
+    z-index: 10001;
 }
 
 .chats {
     margin: 0 auto;
-    height: 70vh;
-    width: 100%;
-    background-color: #ffa1a1;
+    margin-top: 60px;
+    height: calc(100vh - 60px - 10vh - 40px);
+    width: 90%;
+    max-width: 800px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 5px;
-    font-family: poppins, sans-serif;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
 }
 
 .box {
     height: 10vh;
-    width: 99%;
+    width: 90%;
+    max-width: 800px;
     margin: 20px auto;
     display: flex;
     justify-content: center;
@@ -115,94 +134,72 @@ span a {
     height: 95%;
     width: 100%;
     border-radius: 25px;
-    border: 2px solid #ff5d35;
+    border: 2px solid var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
     padding: 10px 40px;
     font-size: 16px;
-    font-family: poppins, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.box input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 .box i {
     position: relative;
     left: -98%;
     cursor: pointer;
-    color: #ff5d35;
+    color: var(--accent-color);
 }
 
 .box .o {
     position: relative;
     left: -2%;
     cursor: pointer;
-    color: #ff5d35;
+    color: var(--accent-color);
+}
+
+.u, .bo {
+    padding: 12px;
+    border-radius: 15px;
+    margin: 10px 0;
+    width: fit-content;
+    max-width: 80%;
+    white-space: pre-wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .u {
-    background-color: #d1e7ff;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    width: fit-content;
-    font-family: poppins, sans-serif;
-    white-space: pre-wrap;
+    background-color: var(--glass-bg);
+    color: white;
+    margin-left: auto;
 }
 
 .bo {
-    background-color: #ffe1e1;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    width: fit-content;
-    font-family: poppins, sans-serif;
-    white-space: pre-wrap;
+    background-color: var(--glass-bg);
+    color: white;
+}
+
+@media screen and (max-width: 850px) {
+    .chats, .box {
+        width: 95%;
+        max-width: 95%;
+    }
+    .t {
+        width: 250px;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .chats {
-        width: 95%;
+    .box input {
+        padding: 10px 30px;
     }
-
     .box i {
         left: -90%;
     }
-
     .t {
-        width: 50%;
+        width: 60%; 
     }
-    .bar {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 600px) {
-    .t {
-        width: 70%;  
-    }
-
-    .t .l {
-        padding: 10px; 
-        margin: auto 5px; 
-        margin-top: auto;  
-    }
-
-    .t .l span {
-        font-size: 13px; 
-        white-space: nowrap;  
-    }
-
-    .t .l i {
-        font-size: 16px; 
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .t {
-        width: 85%; 
-    }
-
-    .t .l {
-        padding: 8px;  
-    }
-
-    .t .l span {
-        font-size: 12px;  
-    }
-
 }
