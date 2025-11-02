@@ -147,6 +147,7 @@ span a {
 
 .bo {
     background-color: #ffe1e1;
+    margin: 10px 10px 10px auto; 
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
@@ -206,3 +207,4 @@ span a {
     }
 
 }
+
