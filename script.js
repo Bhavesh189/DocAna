@@ -9,7 +9,7 @@ ques.addEventListener('keypress', function (event) {
 
 function typeReply(element, text) {
     let i = 0;
-    const speed = 25;
+    const speed = 2;
     
     element.innerText = '';
 
@@ -94,3 +94,4 @@ bar.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(".chats").scrollTop = document.querySelector(".chats").scrollHeight;
 });
+
