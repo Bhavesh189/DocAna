@@ -45,12 +45,10 @@ async function snd() {
     chats.scrollTop = chats.scrollHeight;
     ques.value = "";
 
-    // IMPORTANT: Ensure there is no trailing slash here
     const VERCEL_BACKEND_URL = "https://backend-eta-dusky.vercel.app";
     
-    // Debugging: Log the exact URL being fetched to verify the double slash is gone
     const fetchUrl = `${VERCEL_BACKEND_URL}/ask`;
-    console.log("Fetching URL:", fetchUrl); 
+    console.log("Fetching URL:", fetchUrl);
     
     try {
         const response = await fetch(fetchUrl, {
@@ -64,14 +62,13 @@ async function snd() {
         if (response.ok) {
             typeReply(bot, data.reply);
         } else {
-            const errorMessage = data.details || data.error || "Unknown server error.";
-            bot.innerText = `⚠️ Server Error (${response.status}): ${errorMessage}. Check your API Key!`;
+            const errorMessage = data.details || data.error || "recharge kra le";
+            bot.innerText = `net chala le (${response.status}): ${errorMessage}. nahi chalayga kya`;
             console.error("Backend returned an error:", data);
         }
 
     } catch (error) {
-        // Network error is most common here if Vercel is unreachable or URL is wrong
-        bot.innerText = "⚠️ Network Error: Could not reach the Vercel backend. Check your URL or server status.";
+        bot.innerText = "Abe net chala le";
         console.error("Network or parsing error:", error);
     }
 }
@@ -94,5 +91,3 @@ bar.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(".chats").scrollTop = document.querySelector(".chats").scrollHeight;
 });
-
-
