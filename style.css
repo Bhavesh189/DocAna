@@ -139,7 +139,8 @@ span a {
     background-color: #d1e7ff;
     padding: 10px;
     border-radius: 10px;
-    margin: 10px;
+    max-width: 40%;
+    margin: 10px 10px 10px auto;
     width: fit-content;
     font-family: poppins, sans-serif;
     white-space: pre-wrap;
@@ -147,10 +148,10 @@ span a {
 
 .bo {
     background-color: #ffe1e1;
-    margin: 10px 10px 10px auto; 
     padding: 10px;
     border-radius: 10px;
-    margin: 10px;
+    max-width: 40%;
+    margin: 10px auto 10px 10px;
     width: fit-content;
     font-family: poppins, sans-serif;
     white-space: pre-wrap;
@@ -170,6 +171,9 @@ span a {
     }
     .bar {
         width: 100%;
+    }
+    .u, .bo {
+        max-width: 80%;
     }
 }
 @media screen and (max-width: 600px) {
@@ -207,4 +211,3 @@ span a {
     }
 
 }
-
