@@ -45,7 +45,7 @@ async function snd() {
     chats.scrollTop = chats.scrollHeight;
     ques.value = "";
 
-    const VERCEL_BACKEND_URL = "https://backend-eta-dusky.vercel.app";
+    const VERCEL_BACKEND_URL = "https://backend-eta-dusky.vercel.app/";
     
     try {
         const response = await fetch(`${VERCEL_BACKEND_URL}/ask`, {
@@ -88,4 +88,5 @@ bar.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(".chats").scrollTop = document.querySelector(".chats").scrollHeight;
 });
+
 
